@@ -10,7 +10,7 @@ public class SimpleServlet extends HttpServlet {
         throws ServletException, IOException {
 
         PrintWriter out = response.getWriter();
-        out.println("Votre nom est : " + request.getParameter("nom"));
+        out.println("Votre nom est : " + request.getParameter("nom") + " et votre prenom est : "+ request.getParameter("prenom"));
         out.flush();
         out.close();
     }
