@@ -10,7 +10,7 @@ public class SimpleServlet extends HttpServlet {
         throws ServletException, IOException {
 
         PrintWriter out = response.getWriter();
-        out.println(new java.util.Date());
+        out.println("Votre nom est : " + request.getParameter("nom"));
         out.flush();
         out.close();
     }
