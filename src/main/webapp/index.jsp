@@ -1,17 +1,28 @@
 <html>
+<head>
+	<link type="text/css" href="static/css/bootstrap.css" rel="stylesheet">
+</head>
 <body>
-<FORM ACTION="/myWebApp/simple" METHOD="POST">
+	<script src="static/js/bootstrap.js">
+	</script>
+	<div class="container-fluid">
+<!--FORM class="well" ACTION="/myWebApp/simple" METHOD="POST">
 		<CENTER>
 			Nom :
-			<INPUT TYPE="TEXT" NAME="nom" VALUE="Your Name"><BR>
+			<INPUT class="span3" TYPE="TEXT" NAME="nom" VALUE="Your Name"><BR>
 			Mail :
-			<INPUT TYPE="TEXT" NAME="mail" VALUE="Your Mail"><P>
+			<INPUT class="span3" TYPE="TEXT" NAME="mail" VALUE="Your Mail"><P>
 				<INPUT TYPE="SUBMIT" VALUE="Check">
 		</CENTER>
-</FORM>
-<FORM ACTION="/myWebApp/listeUt" METHOD="POST">
+</FORM-->
+<H1>
+	<CENTER>
+		Que voulez vous faire?
+	</CENTER>
+</H1>
+<FORM class="form-horizontal" ACTION="/myWebApp/listeUt" METHOD="POST">
 		<CENTER>
-				<INPUT TYPE="SUBMIT" VALUE="Liste des Utilisateurs">
+				<BUTTON type="submit" class="btn btn-primary">Liste des Utilisateurs</BUTTON>
 		</CENTER>
 </FORM>
 
