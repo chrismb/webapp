@@ -23,10 +23,14 @@ public class Utilisateurliste extends HttpServlet {
     }
         
         
-        out.println("Liste des Utilisateurs : ");
+        out.println("<H1>Liste des Utilisateurs : </H1>");
+        out.println("<SELECT NAME=\"Utilisateur\">");
         for(Utilisateur ut: myUtService.findAllUtilisateurs()){
-            out.println(ut.getID() + "\t" + ut.getNom());
-        }        
+            out.println("<OPTION VALUE=\"Utilisateur\""+ut.getID());
+            out.print(">");
+            out.print(ut.getNom());
+        } 
+        out.println("</SELECT>");       
 
         out.flush();
         out.close();
