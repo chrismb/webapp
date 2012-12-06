@@ -14,4 +14,13 @@ public class SimpleServlet extends HttpServlet {
         out.flush();
         out.close();
     }
+    public void doPost(HttpServletRequest request,
+                      HttpServletResponse response)
+        throws ServletException, IOException {
+
+        PrintWriter out = response.getWriter();
+        out.println("Votre nom est : " + request.getParameter("nom") + " et votre mail est : "+ request.getParameter("mail"));
+        out.flush();
+        out.close();
+    }
 }
