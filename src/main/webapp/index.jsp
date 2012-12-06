@@ -9,6 +9,12 @@
 				<INPUT TYPE="SUBMIT" VALUE="Check">
 		</CENTER>
 </FORM>
+<FORM ACTION="/myWebApp/listeUt" METHOD="POST">
+		<CENTER>
+				<INPUT TYPE="SUBMIT" VALUE="Liste des Utilisateurs">
+		</CENTER>
+</FORM>
+
 
 
 </body>

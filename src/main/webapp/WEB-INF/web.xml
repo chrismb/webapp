@@ -8,8 +8,12 @@
         <servlet-name>simple</servlet-name>
         <servlet-class>fr.adhoc.myWebbApp.web.SimpleServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>listeUt</servlet-name>
+        <servlet-class>fr.adhoc.myWebbApp.web.Utilisateurliste</servlet-class>
+    </servlet>
     <servlet-mapping>
-        <servlet-name>simple</servlet-name>
-        <url-pattern>/simple</url-pattern>
+        <servlet-name>listeUt</servlet-name>
+        <url-pattern>/listeUt</url-pattern>
     </servlet-mapping>
 </web-app>
