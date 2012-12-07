@@ -20,9 +20,9 @@
 		Que voulez vous faire?
 	</CENTER>
 </H1>
-<FORM class="form-horizontal" ACTION="/myWebApp/listeUt" METHOD="POST">
+<FORM class="form-horizontal" ACTION="/myWebApp/listeUt" METHOD="POST" >
 		<CENTER>
-				<BUTTON type="submit" class="btn btn-primary">Liste des Utilisateurs</BUTTON>
+				<BUTTON type="submit" NAME="userID" VALUE="0" class="btn btn-primary">Liste des Utilisateurs</BUTTON>
 		</CENTER>
 </FORM>
 
