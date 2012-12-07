@@ -14,7 +14,8 @@ public class Utilisateurliste extends HttpServlet {
                       HttpServletResponse response)
         throws ServletException, IOException {
 
-    int userID = Integer.parseInt( request.getParameter("userID") );
+
+    HttpSession mySession = request.getSession();
     PrintWriter out = response.getWriter();
     UtilisateurService myUtService=null; 
     try{
@@ -22,53 +23,12 @@ public class Utilisateurliste extends HttpServlet {
     }catch (Exception e) {
             out.println(e);
     }
-        out.println("<table>");
-        out.println("<tr>");
-            out.println("<td>");
-                out.println("<FORM ACTION=\"/myWebApp/listeUt\" METHOD=\"POST\">");
-                out.println("<H1>Utilisateurs : </H1>");
-                out.println("<SELECT NAME=\"userID\">");
-                for(Utilisateur ut: myUtService.findAllUtilisateurs()){
-                    out.println("<OPTION VALUE=\""+ut.getID()+"\">");
-                    out.print(ut.getNom());
-                } 
-                out.println("</SELECT>"); 
-                out.println("<BUTTON type=\"submit\" class=\"btn btn-primary\">Infos utilisateur</BUTTON>");
-                out.println("</FORM>");
-            out.println("</td>");
-        
 
+    
 
-            if (userID != 0){ 
-                Utilisateur user = myUtService.findUtilisateurById(userID);
-            out.println("<td>");
-                out.println("<table>");
-                    out.println("<tr>");
-                        out.println("<td>");
-                            out.println("<H2>");
-                            out.print("Name : ");
-                            out.println("</H2>");
-                        out.println("</td>");
-                        out.println("<td>");
-                            out.println( user.getNom() );
-                        out.println("</td>");
-                    out.println("</tr>");    
-                    out.println("<tr>");
-                        out.println("<td>");
-                            out.println("<H2>");
-                            out.print("Mail : ");
-                            out.println("</H2>");
-                        out.println("</td>");
-                        out.println("<td>");
-                            out.println( user.getMail() );
-                        out.println("</td>");
-                    out.println("</tr>");
-                out.println("<table>");
-            out.println("</td>");      
-            }
-
-        out.println("</tr>"); 
-        out.println("</table>");   
+    mySession.setAttribute("listeUt", myUtService.findAllUtilisateurs());
+    RequestDispatcher view = request.getRequestDispatcher("/liste.jsp");
+    view.forward(request, response);   
 
         out.flush();
         out.close();
