@@ -16,21 +16,17 @@ public class Utilisateurliste extends HttpServlet {
 
 
     HttpSession mySession = request.getSession();
-    PrintWriter out = response.getWriter();
+
     UtilisateurService myUtService=null; 
     try{
         myUtService = new UtilisateurServiceImpl();
     }catch (Exception e) {
-            out.println(e);
+            //out.println(e);
     }
 
-    
-
-    mySession.setAttribute("listeUt", myUtService.findAllUtilisateurs());
+    mySession.setAttribute("listeUtilisateurs", myUtService.findAllUtilisateurs());
     RequestDispatcher view = request.getRequestDispatcher("/liste.jsp");
     view.forward(request, response);   
 
-        out.flush();
-        out.close();
     }
 }
