@@ -36,6 +36,22 @@
                     </tr>
                 </table>
             </td>
+            <c:if test="${listeProduitsnotnull == 1}">
+                <td>
+                    <table>
+                        <c:forEach items="${listeProduits}" var="prod">
+                       <tr>
+                        <td>
+                            <b>Nom : </b>${prod.nom}
+                        </td>
+                        <td>
+                            <b>Description : </b>${prod.description}
+                        </td>
+                       </tr>
+                        </c:forEach>
+                    </table>
+                </td>
+            </c:if>
         </tr>
     </table>
 
