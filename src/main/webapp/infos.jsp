@@ -22,6 +22,11 @@
                 <BUTTON type="submit" class="btn btn-primary">Infos utilisateur</BUTTON>
                 </FORM>
             </td>
+            <td>
+                <b>Nom : </b>${infosutilisateursnom}
+            </td>
+                <b>Mail : </b>${infosutilisateursmail}
+            </td>
         </tr>
     </table>
 
