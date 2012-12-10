@@ -51,9 +51,8 @@ public class Utilisateurinfos extends HttpServlet {
     }
     mySession.setAttribute( "listeProduitsnotnull", check );
     
-    mySession.setAttribute( "listeUtilisateurs", myUtService.findAllUtilisateurs());
-    mySession.setAttribute( "infosutilisateursnom", myUtService.findUtilisateurById( myId ).getNom() );
-    mySession.setAttribute( "infosutilisateursmail", myUtService.findUtilisateurById( myId ).getMail());
+    mySession.setAttribute( "Utilisateur", myUtService.findUtilisateurById( myId ) );
+    
     RequestDispatcher view = request.getRequestDispatcher("/infos.jsp");
     view.forward(request, response);   
     }

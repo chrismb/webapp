@@ -10,28 +10,22 @@
         <table>
         <tr>
             <td>
-                <FORM ACTION="/myWebApp/infosUt" METHOD="POST">
-                <H1>Utilisateurs : </H1>
-                <SELECT NAME="userID">
-                <c:forEach items="${listeUtilisateurs}" var="user">
-                    <OPTION VALUE="${user.id}">
-                        ${user.nom}
-                    </OPTION>
-                </c:forEach>
-                </SELECT> 
-                <BUTTON type="submit" class="btn btn-primary">Infos utilisateur</BUTTON>
+                <FORM class="form-horizontal" ACTION="/myWebApp/listeUt" METHOD="POST" >
+                 <CENTER>
+                     <BUTTON type="submit" NAME="userID" VALUE="0" class="btn btn-primary">Liste des Utilisateurs</BUTTON>
+                 </CENTER>
                 </FORM>
             </td>
             <td>
                 <table>
                     <tr>
                         <td>
-                            <b>Nom : </b>${infosutilisateursnom}
+                            <b>Nom : </b>${Utilisateur.nom}
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <b>Mail : </b>${infosutilisateursmail}
+                            <b>Mail : </b>${Utilisateur.mail}
                         </td>
                     </tr>
                 </table>
