@@ -23,9 +23,18 @@
                 </FORM>
             </td>
             <td>
-                <b>Nom : </b>${infosutilisateursnom}
-            </td>
-                <b>Mail : </b>${infosutilisateursmail}
+                <table>
+                    <tr>
+                        <td>
+                            <b>Nom : </b>${infosutilisateursnom}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <b>Mail : </b>${infosutilisateursmail}
+                        </td>
+                    </tr>
+                </table>
             </td>
         </tr>
     </table>

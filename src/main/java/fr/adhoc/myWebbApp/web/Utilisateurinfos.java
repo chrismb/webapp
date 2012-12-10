@@ -25,13 +25,11 @@ public class Utilisateurinfos extends HttpServlet {
             //out.println(e);
     }
 
-    //int myId = (Integer) mySession.getAttribute("userID");
-    System.out.println("THE ID IS : "+ mySession.getAttribute("userID"));
-    /*
+    int myId = Integer.parseInt( request.getParameter("userID") );
+    mySession.setAttribute("listeUtilisateurs", myUtService.findAllUtilisateurs());
     mySession.setAttribute( "infosutilisateursnom", myUtService.findUtilisateurById( myId ).getNom() );
     mySession.setAttribute("infosutilisateursmail", myUtService.findUtilisateurById( myId ).getMail());
     RequestDispatcher view = request.getRequestDispatcher("/infos.jsp");
     view.forward(request, response);   
-*/
     }
 }
