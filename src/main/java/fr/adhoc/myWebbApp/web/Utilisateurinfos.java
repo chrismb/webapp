@@ -22,12 +22,13 @@ public class Utilisateurinfos extends HttpServlet {
     HttpSession mySession = request.getSession();
 
     UtilisateurService myUtService=null; 
-    ProduitService myPrService=null; 
+    
     try{
         myUtService = new UtilisateurServiceImpl();
     }catch (Exception e) {
             //out.println(e);
     }
+    ProduitService myPrService=null; 
     try{
         myPrService = new ProduitServiceImpl();
     }catch (Exception e) {
@@ -35,13 +36,9 @@ public class Utilisateurinfos extends HttpServlet {
     }
 
     int myId = Integer.parseInt( request.getParameter("userID") );
-    List<Produit> listeproduits = new ArrayList<Produit>();
-   for(Produit prod : myPrService.findAllProduits() ){
-
-        if( prod.getVendeur().getId() == myId ){
-            listeproduits.add(prod);
-        }
-    }
+    
+    List<Produit> listeproduits = myPrService.findProduitsByUtilisateur(myId);
+   
     
     int check = 0;
     if (listeproduits != null){
