@@ -26,13 +26,13 @@ public class Utilisateurinfos extends HttpServlet {
     try{
         myUtService = new UtilisateurServiceImpl();
     }catch (Exception e) {
-            //out.println(e);
+            System.out.println(e);
     }
     ProduitService myPrService=null; 
     try{
         myPrService = new ProduitServiceImpl();
     }catch (Exception e) {
-            //out.println(e);
+            System.out.println(e);
     }
 
     int myId = Integer.parseInt( request.getParameter("userID") );

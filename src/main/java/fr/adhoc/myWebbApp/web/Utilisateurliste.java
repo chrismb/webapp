@@ -21,7 +21,7 @@ public class Utilisateurliste extends HttpServlet {
     try{
         myUtService = new UtilisateurServiceImpl();
     }catch (Exception e) {
-            //out.println(e);
+            System.out.println(e);
     }
 
     mySession.setAttribute("listeUtilisateurs", myUtService.findAllUtilisateurs());
