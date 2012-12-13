@@ -10,11 +10,11 @@
     </servlet>
     <servlet>
         <servlet-name>listeUt</servlet-name>
-        <servlet-class>fr.adhoc.myWebbApp.web.Utilisateurliste</servlet-class>
+        <servlet-class>fr.adhoc.myWebbApp.web.UtilisateurListe</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>infosUt</servlet-name>
-        <servlet-class>fr.adhoc.myWebbApp.web.Utilisateurinfos</servlet-class>
+        <servlet-class>fr.adhoc.myWebbApp.web.UtilisateurInfos</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>listeUt</servlet-name>

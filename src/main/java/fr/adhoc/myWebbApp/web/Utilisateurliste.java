@@ -6,9 +6,11 @@ import fr.adhoc.leboncoin.service.impl.UtilisateurServiceImpl;
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext; 
 
 
-public class Utilisateurliste extends HttpServlet {
+public class UtilisateurListe extends HttpServlet {
 
     public void doPost(HttpServletRequest request,
                       HttpServletResponse response)
@@ -16,13 +18,13 @@ public class Utilisateurliste extends HttpServlet {
 
 
     HttpSession mySession = request.getSession();
-
+     ApplicationContext context = new ClassPathXmlApplicationContext("classpath:/applicationContext.xml");
     UtilisateurService myUtService=null; 
-    try{
-        myUtService = new UtilisateurServiceImpl();
-    }catch (Exception e) {
-            System.out.println(e);
-    }
+    
+       
+        myUtService = (UtilisateurService)context.getBean("utilisateurService");
+        
+
 
     mySession.setAttribute("listeUtilisateurs", myUtService.findAllUtilisateurs());
     RequestDispatcher view = request.getRequestDispatcher("/liste.jsp");

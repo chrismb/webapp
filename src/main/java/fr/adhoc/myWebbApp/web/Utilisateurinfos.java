@@ -12,7 +12,7 @@ import javax.servlet.http.*;
 import java.util.*;
 
 
-public class Utilisateurinfos extends HttpServlet {
+public class UtilisateurInfos extends HttpServlet {
 
     public void doPost(HttpServletRequest request,
                       HttpServletResponse response)
