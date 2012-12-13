@@ -8,6 +8,10 @@
   <name>myWebApp Maven Webapp</name>
   <url>http://maven.apache.org</url>
 
+<properties>
+    <spring.version>3.0.5.RELEASE</spring.version>
+  </properties>
+
   <repositories>
       <repository>
           <id>repository.jboss.org-public</id>
