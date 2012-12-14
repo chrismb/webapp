@@ -21,7 +21,7 @@ public class UtilisateurListe extends HttpServlet {
      ApplicationContext context = new ClassPathXmlApplicationContext("classpath:/applicationContext.xml");
     UtilisateurService myUtService=null; 
     
-       
+       System.out.println(context);
         myUtService = (UtilisateurService)context.getBean("utilisateurService");
         
 
