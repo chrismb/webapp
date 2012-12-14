@@ -10,7 +10,8 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.util.*;
-
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext; 
 
 public class UtilisateurInfos extends HttpServlet {
 
@@ -21,19 +22,13 @@ public class UtilisateurInfos extends HttpServlet {
 
     HttpSession mySession = request.getSession();
 
+    ApplicationContext context = new ClassPathXmlApplicationContext("classpath:/applicationContext.xml");
     UtilisateurService myUtService=null; 
-    
-    try{
-        myUtService = new UtilisateurServiceImpl();
-    }catch (Exception e) {
-            System.out.println(e);
-    }
-    ProduitService myPrService=null; 
-    try{
-        myPrService = new ProduitServiceImpl();
-    }catch (Exception e) {
-            System.out.println(e);
-    }
+    ProduitService myPrService=null;
+       
+        myUtService = (UtilisateurService)context.getBean("utilisateurService");
+        myPrService = (ProduitService)context.getBean("produitService");
+
 
     int myId = Integer.parseInt( request.getParameter("userID") );
     
