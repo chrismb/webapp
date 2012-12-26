@@ -12,6 +12,7 @@ import javax.servlet.http.*;
 import java.util.*;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext; 
+import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 public class UtilisateurInfos extends HttpServlet {
 
@@ -23,6 +24,7 @@ public class UtilisateurInfos extends HttpServlet {
     HttpSession mySession = request.getSession();
 
     ApplicationContext context = new ClassPathXmlApplicationContext("classpath:/applicationContext.xml");
+    //ApplicationContext context = new FileSystemXmlApplicationContext("/Users/marshall/code/leboncoin/src/main/resources/applicationContext.xml"); 
     UtilisateurService myUtService=null; 
     ProduitService myPrService=null;
        
@@ -36,11 +38,13 @@ public class UtilisateurInfos extends HttpServlet {
    
     
     int check = 0;
+    
     if (listeproduits != null){
         mySession.setAttribute( "listeProduits", listeproduits );
         check=1;
 
     }
+    
     mySession.setAttribute( "listeProduitsnotnull", check );
     
     mySession.setAttribute( "Utilisateur", myUtService.findUtilisateurById( myId ) );

@@ -7,6 +7,7 @@
 <body>
 	<script src="static/js/bootstrap.js">
 	</script>
+    <center>
         <table>
         <tr>
             <td>
@@ -24,6 +25,7 @@
             </td>
         </tr>
     </table>
+</center>
 
 </body>
 </html>

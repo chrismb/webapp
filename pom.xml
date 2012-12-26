@@ -4,7 +4,7 @@
   <groupId>fr.adhoc.myWebApp</groupId>
   <artifactId>myWebApp</artifactId>
   <packaging>war</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>2.0-SNAPSHOT</version>
   <name>myWebApp Maven Webapp</name>
   <url>http://maven.apache.org</url>
 
@@ -36,7 +36,7 @@
    <dependency>
     <groupId>fr.adhoc.leboncoin</groupId>
       <artifactId>services-leboncoin</artifactId>
-       <version>1.0-SNAPSHOT</version>
+       <version>2.0-SNAPSHOT</version>
     </dependency>
     
     <dependency>
@@ -63,7 +63,7 @@
       <artifactId>spring-context</artifactId>
       <version>${spring.version}</version>
     </dependency>
-  <!--
+  
     <dependency>
             <groupId>javax.servlet.jsp</groupId>
             <artifactId>jsp-api</artifactId>
@@ -71,7 +71,7 @@
             <scope>provided</scope>
     </dependency>
 
-  -->
+  
   </dependencies>
   <build>
         <finalName>myWebApp</finalName>

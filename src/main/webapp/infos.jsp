@@ -17,29 +17,47 @@
                 </FORM>
             </td>
             <td>
+                <H1>
+                    <CENTER>
+                        Infos:
+                    </CENTER>   
+                </H1>   
                 <table>
                     <tr>
                         <td>
+                            <CENTER>
                             <b>Nom : </b>${Utilisateur.nom}
+                            </CENTER>
                         </td>
                     </tr>
                     <tr>
                         <td>
+                            <CENTER>
                             <b>Mail : </b>${Utilisateur.mail}
+                            </CENTER>
                         </td>
                     </tr>
                 </table>
             </td>
             <c:if test="${listeProduitsnotnull == 1}">
                 <td>
+                    <H1>
+                        <CENTER>
+                            Produits:
+                        </CENTER>   
+                    </H1> 
                     <table>
                         <c:forEach items="${listeProduits}" var="prod">
                        <tr>
                         <td>
+                            <CENTER>
                             <b>Nom : </b>${prod.nom}
+                            </CENTER>
                         </td>
                         <td>
+                            <CENTER>
                             <b>Description : </b>${prod.description}
+                            </CENTER>
                         </td>
                        </tr>
                         </c:forEach>

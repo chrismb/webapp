@@ -8,6 +8,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext; 
+import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 
 public class UtilisateurListe extends HttpServlet {
@@ -19,6 +20,7 @@ public class UtilisateurListe extends HttpServlet {
 
     HttpSession mySession = request.getSession();
      ApplicationContext context = new ClassPathXmlApplicationContext("classpath:/applicationContext.xml");
+     //ApplicationContext context = new FileSystemXmlApplicationContext("/Users/marshall/code/leboncoin/src/main/resources/applicationContext.xml");
     UtilisateurService myUtService=null; 
     
        System.out.println(context);
