@@ -36,10 +36,10 @@ public class UtilisateurInfos extends HttpServlet {
     
     List<Produit> listeproduits = myPrService.findProduitsByUtilisateur(myId);
    
-    
+    Iterator it=listeproduits.iterator();
     int check = 0;
     
-    if (listeproduits != null){
+    if (it.hasNext()){
         mySession.setAttribute( "listeProduits", listeproduits );
         check=1;
 
